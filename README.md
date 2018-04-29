@@ -1,17 +1,29 @@
+# WordPress Starter theme build with Foundation 6
+
+## Wordpress Guidelines
+
+### Framework
+Uses JointsWP template with Foundation 6 Framework
+Refer to [JointsWP Documentation](http://jointswp.com/docs/) for more information
+
+### Custom Post Types
+We use the [extended-cpts library](https://github.com/johnbillion/extended-cpts) to easily create and manage custom post types.
+
+### Custom Taxonomies
+We use the [extended-taxos library](https://github.com/johnbillion/extended-taxos) to easily create and manage custom taxonomies.
+
+### Custom fields
+We use the [CMB2 library](https://github.com/WebDevStudios/CMB2) to create and manage custom fields in the backend.
+Refer to the [CMB2 wiki](https://github.com/WebDevStudios/CMB2/wiki) for documentation.
+
+
 Currently using Foundation 6.4.3.
 
-## JointsWP Requirements
-JointsWP requires [Node.js](https://nodejs.org) v6.9.x or newer. This doesn't mean you need to understand Node (or even Gulp) - it's just the steps we need to take to make sure all of our development tools are installed. 
+## Getting Started
 
-## Getting Started 
-### Download JointsWP and install dependencies with npm 
-```bash
-$ cd my-wordpress-folder/wp-content/themes/
-$ git clone https://github.com/JeremyEnglert/JointsWP.git
-$ cd JointsWP
-$ npm install
-```
-At this point, JointsWP should be installed and fully running on your local machine. If you prefer to install the theme manually, that will work as well - just be sure to run `npm install` after manually moving the files into the `/themes/` directory.
+1. Clone or download the repo to your machine.
+2. Using the console, navigate to the project folder and run `npm install`.
+3. You're all set! Optionally you can do a find a replace for any variables or namespaces if want to change the theme name.
 
 ## Working with JointsWP
 ### Watching for Changes
@@ -52,3 +64,9 @@ Compiles and minifies all scripts and styles.
 
 ### Images
 * `assets/images/` - place your theme images here. Each image will be optimized when the build process is ran.
+
+### Vendors CSS
+* `assets/styles/vendors/` - place vendor css here, right now we won't be concatenating this with our custom css.
+
+## Vendors JS
+* `assets/scripts/vendors` - placer vendor JS here, right now we won't be adding to the main script, be sure to also `wp_register_script`.
