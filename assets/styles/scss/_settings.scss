@@ -59,6 +59,7 @@
 //  54. Tooltip
 //  55. Top Bar
 //  56. Xy Grid
+//  57. Transitions
 
 @import '../../../node_modules/foundation-sites/scss/util/util';
 
@@ -100,6 +101,9 @@ $global-color-pick-contrast-tolerance: 0;
 $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;
+
+//Custom variables
+$spacer: 1.5rem;
 
 // 2. Breakpoints
 // --------------
@@ -867,3 +871,16 @@ $grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
 
+// 57. Transitions
+// -----------
+$duration-short: 100ms;
+$duration: 250ms;
+$duration-long: 600ms;
+$easing: ease-out;
+$box-shadow: 0 3px 3px rgba(black, 0.2);
+$faded: 0.6;
+
+// 58. Box-shadows
+// -----------
+$focus-box-shadow-sm: 0 0 5px;
+$focus-box-shadow-lg: 0 0 15px -5px;

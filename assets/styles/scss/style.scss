@@ -9,7 +9,7 @@ CSS file.
 ******************************************************************/
 
 // Import local Foundation overrides - Don't link to Bower version as it will be overwritten whenever updated
-@import "settings";
+@import "_settings.scss";
 
 // Import foundation.scss from vendor files
 @import "../../../node_modules/foundation-sites/scss/foundation";
@@ -68,6 +68,11 @@ CSS file.
 
 // Import your custom styles
 @import "_global.scss";
+@import "base/_all.scss";
+@import "tools/_all.scss";
+@import "blocks/_all.scss";
+@import "components/_all.scss";
+
 
 //import slick stylesheets
 @import "../vendors/_slick.scss";
