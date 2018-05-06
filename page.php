@@ -1,30 +1,77 @@
 <?php 
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
+ * Template Name: Github Repo
  */
 
 get_header(); ?>
-	
-	<div class="content">
-	
-		<div class="inner-content grid-x grid-margin-x grid-padding-x">
-	
-		    <main class="main small-12 large-8 medium-8 cell" role="main">
-				
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			    	<?php get_template_part( 'parts/loop', 'page' ); ?>
+<?php
+
+	//get all the data for the page and art post type
+	$thumb_url   = get_the_post_thumbnail_url( $post, 'full' );
+	$title       = get_the_title();   // Could use 'the_title()' but this allows for override
+	$description = ( $post->post_excerpt ) ? get_the_excerpt(): ''; // Could use 'the_excerpt()' but this allows for override
+	$content	= get_the_content();
+
+?>
+
+<div class="off-canvas-wrapper">
+	<div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+	  <!-- Your menu or Off-canvas content goes here -->
+		<div>
+			      	
+			<div>
+				<a href="<?php echo home_url(); ?>"><h3><?php bloginfo('name'); ?></h3></a>
+			</div>      	
+			<div>
+			   <?php joints_off_canvas_nav(); ?>       		
+			</div>
+		</div>
+
+	</div>
+	<div class="off-canvas-content" data-off-canvas-content>
+		
+		<header class="header" role="header">
+			<?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>			
+		</header>
+		  <!-- Your page content lives here -->
+		<div class="site-content grid-container">
+			<div class="inner-content grid-x grid-padding-y grid-padding-x align-center">
+	
+				<main class="main cell" role="main" id="code">
+					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
+						
+						<header class="grid-x">
+							<div class=" cell" style="background-image:url(<?php echo esc_url( $thumb_url ); ?>)" role="banner">
+								<h1 class=""><?php echo $title; ?></h1>
+								<div class=""> <?php echo $description; ?></div>
+							</div> <!-- end article header -->
+						</header><!--end of grid-x-->
+	
+					    <section id="the-content" class="entry-content grid-x grid-margin-x small-up-1 medium-up-2 large-up-3" itemprop="articleBody" role="main">
+						    <?php the_content(); ?>
+						</section> <!-- end article section -->
+											
+						<footer class="article-footer">
+							 <?php wp_link_pages(); ?>
+						</footer> <!-- end article footer -->						
+	
+										
+					</article> <!-- end article -->
 			    
-			    <?php endwhile; endif; ?>							
-			    					
-			</main> <!-- end #main -->
+			    	<?php endwhile; endif; ?>	
+				</main>
+	
+			</div> <!-- end #inner-content -->
+	
+		</div> <!-- end #content -->	
+	  
+	 
+	 <?php get_footer(); ?>
+	  
+	</div>
+</div>
 
-		    <?php get_sidebar(); ?>
-		    
-		</div> <!-- end #inner-content -->
 
-	</div> <!-- end #content -->
-
-<?php get_footer(); ?>

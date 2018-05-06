@@ -3,7 +3,8 @@
 register_nav_menus(
 	array(
 		'main-nav' => __( 'The Main Menu', 'jointswp' ),   // Main nav in header
-		'footer-links' => __( 'Footer Links', 'jointswp' ) // Secondary nav in footer
+		'footer-links' => __( 'Footer Links', 'jointswp' ), // Secondary nav in footer
+		'social-media'  => __('Social media Menu', 'jointswp')		
 	)
 );
 
@@ -72,6 +73,18 @@ function joints_main_nav_fallback() {
         'link_after' => ''                             // After each link
 	) );
 }
+
+//social media menu
+function joints_social_media() {
+    wp_nav_menu(array(
+    	'container' => 'false',                         // Remove nav container
+    	'menu' => __( 'Footer Links', 'jointswp' ),   	// Nav name
+    	'menu_class' => 'social-menu',      					// Adding custom nav class
+    	'theme_location' => 'social-media',             // Where it's located in the theme
+        'depth' => 0,                                   // Limit the depth of the nav
+    	'fallback_cb' => ''  							// Fallback function
+	));
+} /* End social media Menu */
 
 // Footer Fallback Menu
 function joints_footer_links_fallback() {
