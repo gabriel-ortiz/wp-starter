@@ -63,7 +63,7 @@ include( GO_INC . 'libraries/cmb2.addons.php' );
 include( GO_INC . 'libraries/cmb2/init.php' );
 include( GO_INC . 'libraries/cmb2-attached-posts/cmb2-attached-posts-field.php' );
 include( GO_INC . 'libraries/cmb2-post-search-field/cmb2_post_search_field.php' );
-
+include( GO_INC . 'libraries/cmb2-conditionals.php' );
 
 // Include compartmentalized functions
 //require_once GO_INC . 'core.php';

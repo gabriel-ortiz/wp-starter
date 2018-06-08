@@ -17,3 +17,10 @@ function site_scripts() {
     }
 }
 add_action('wp_enqueue_scripts', 'site_scripts', 999);
+
+function admin_scripts(){
+    wp_enqueue_script('cmb2-conditionals', get_template_directory_uri() . '/includes/libraries/js-cmb2-conditionals.js', array( 'jquery' ), '', true  );
+
+}
+
+add_action( 'admin_enqueue_scripts', 'admin_scripts' );
