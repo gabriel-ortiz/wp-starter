@@ -194,3 +194,25 @@ function content_blocks() {
 	) );
 
 }
+
+
+
+/**
+ * Add custom fields to page with sidebar template
+ */
+function page_sidebar() {
+	$prefix = 'page_';
+	$cmb = new_cmb2_box( array(
+		'id'           => $prefix . 'sidebar_metabox',
+		'title'        => __( 'Sidebar', 'cmb2' ),
+		'priority'     => 'high',
+		'object_types' => array( 'page' ),
+		'show_on'      => array( 'key' => 'page-template', 'value' => 'page-templates/page-with-sidebar.php' )
+	) );
+	$cmb->add_field( array(
+		'id'          => $prefix . 'sidebar_content',
+		'type'        => 'wysiwyg',
+		'description' => '',
+		// 'repeatable'  => false, // use false if you want non-repeatable group
+	) );
+}
