@@ -19,7 +19,12 @@ if ( ! defined( 'DAY_IN_SECONDS' ) ) {
 find ./ -type f -exec sed -i -e 's/GO_WP/FWF/g' {} \;
 find ./ -type f -exec sed -i -e 's/go_wp/fwf/g' {} \; 
 find ./ -type f -exec sed -i 's/go_wp/fw/gI' {} \; 
-find ./ -type f -exec sed -i -e 's/GO_WP/fw/g' {} \; 	
+find ./ -type f -exec sed -i -e 's/GO_WP/fw/g' {} \; 
+
+//starting a new repository in Git
+git clone --bare **repository-url** .get
+git config --bool core.bare false
+git reset --hard
 */
 
 // Theme support options
