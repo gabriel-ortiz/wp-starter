@@ -19,8 +19,8 @@
 				</div>
 			</div>
 			
-			<div class="top-bar-right show-for-medium">
-				<a href="<?php echo esc_url( site_url('/share-your-story/') ); ?>" target="_self" class="go-c-nav__cta">share your story</a>
+			<div class="top-bar-right">
+				important
 			</div>
 			
 			

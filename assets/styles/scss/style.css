@@ -1,9 +1,9 @@
 /*
 Error: Invalid US-ASCII character "\xE2"
-        on line 94 of /home/ubuntu/workspace/wp-content/themes/go-starter/node_modules/foundation-sites/scss/prototype/_relation.scss
-        from line 10 of /home/ubuntu/workspace/wp-content/themes/go-starter/node_modules/foundation-sites/scss/prototype/_prototype.scss
-        from line 68 of /home/ubuntu/workspace/wp-content/themes/go-starter/node_modules/foundation-sites/scss/foundation.scss
-        from line 15 of /home/ubuntu/workspace/wp-content/themes/go-starter/assets/styles/scss/style.scss
+        on line 94 of /home/ubuntu/workspace/wp-content/themes/wp-starter/node_modules/foundation-sites/scss/prototype/_relation.scss
+        from line 10 of /home/ubuntu/workspace/wp-content/themes/wp-starter/node_modules/foundation-sites/scss/prototype/_prototype.scss
+        from line 68 of /home/ubuntu/workspace/wp-content/themes/wp-starter/node_modules/foundation-sites/scss/foundation.scss
+        from line 15 of /home/ubuntu/workspace/wp-content/themes/wp-starter/assets/styles/scss/style.scss
 
 89:   &:nth-child(n + #{$num}):nth-last-child(n + #{$num}) {
 90:     @content;
@@ -18,10 +18,10 @@ Error: Invalid US-ASCII character "\xE2"
 99: }
 
 Backtrace:
-/home/ubuntu/workspace/wp-content/themes/go-starter/node_modules/foundation-sites/scss/prototype/_relation.scss:94
-/home/ubuntu/workspace/wp-content/themes/go-starter/node_modules/foundation-sites/scss/prototype/_prototype.scss:10
-/home/ubuntu/workspace/wp-content/themes/go-starter/node_modules/foundation-sites/scss/foundation.scss:68
-/home/ubuntu/workspace/wp-content/themes/go-starter/assets/styles/scss/style.scss:15
+/home/ubuntu/workspace/wp-content/themes/wp-starter/node_modules/foundation-sites/scss/prototype/_relation.scss:94
+/home/ubuntu/workspace/wp-content/themes/wp-starter/node_modules/foundation-sites/scss/prototype/_prototype.scss:10
+/home/ubuntu/workspace/wp-content/themes/wp-starter/node_modules/foundation-sites/scss/foundation.scss:68
+/home/ubuntu/workspace/wp-content/themes/wp-starter/assets/styles/scss/style.scss:15
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/util.rb:1300:in `rescue in block in find_encoding_error'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/util.rb:1297:in `block in find_encoding_error'
 /nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/util.rb:1296:in `each'
@@ -97,4 +97,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid US-ASCII character \"\xE2\"\A         on line 94 of /home/ubuntu/workspace/wp-content/themes/go-starter/node_modules/foundation-sites/scss/prototype/_relation.scss\A         from line 10 of /home/ubuntu/workspace/wp-content/themes/go-starter/node_modules/foundation-sites/scss/prototype/_prototype.scss\A         from line 68 of /home/ubuntu/workspace/wp-content/themes/go-starter/node_modules/foundation-sites/scss/foundation.scss\A         from line 15 of /home/ubuntu/workspace/wp-content/themes/go-starter/assets/styles/scss/style.scss\A \A 89:   &:nth-child(n + #{$num}):nth-last-child(n + #{$num}) {\A 90:     @content;\A 91:   }\A 92: }\A 93: \A 94: /// Will only select the child if it’s unique. That means that if there are at least 2 children, the style will not be applied.\A 95: @mixin unique {\A 96:   &:only-child {\A 97:     @content;\A 98:   }\A 99: }"; }
+  content: "Error: Invalid US-ASCII character \"\xE2\"\A         on line 94 of /home/ubuntu/workspace/wp-content/themes/wp-starter/node_modules/foundation-sites/scss/prototype/_relation.scss\A         from line 10 of /home/ubuntu/workspace/wp-content/themes/wp-starter/node_modules/foundation-sites/scss/prototype/_prototype.scss\A         from line 68 of /home/ubuntu/workspace/wp-content/themes/wp-starter/node_modules/foundation-sites/scss/foundation.scss\A         from line 15 of /home/ubuntu/workspace/wp-content/themes/wp-starter/assets/styles/scss/style.scss\A \A 89:   &:nth-child(n + #{$num}):nth-last-child(n + #{$num}) {\A 90:     @content;\A 91:   }\A 92: }\A 93: \A 94: /// Will only select the child if it’s unique. That means that if there are at least 2 children, the style will not be applied.\A 95: @mixin unique {\A 96:   &:only-child {\A 97:     @content;\A 98:   }\A 99: }"; }

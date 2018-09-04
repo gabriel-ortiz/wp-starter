@@ -48,10 +48,10 @@ const SOURCE = {
 		FOUNDATION + '/dist/js/plugins/foundation.tabs.js',
 		FOUNDATION + '/dist/js/plugins/foundation.toggler.js',
 		FOUNDATION + '/dist/js/plugins/foundation.tooltip.js',
-
-		// Place custom JS here, files will be concantonated, minified if ran with --production
-		'assets/scripts/js/**/*.js',	
     ],
+   
+   	// Place custom JS here, files will be concantonated, minified if ran with --production
+	themeScripts:	'assets/scripts/js/**/*.js',
    
 	// Scss files will be concantonated, minified if ran with --production
 	styles: 'assets/styles/scss/**/*.scss',
@@ -81,10 +81,32 @@ const JSHINT_CONFIG = {
 // JSHint, concat, and minify JavaScript 
 gulp.task('scripts', function() {
 	
+	return gulp.src(SOURCE.scripts)
+		.pipe(plugin.plumber(function(error) {
+            gutil.log(gutil.colors.red(error.message));
+            this.emit('end');
+        }))
+		.pipe(plugin.sourcemaps.init())
+		.pipe(plugin.babel({
+			presets: ['es2015'],
+			compact: true,
+			ignore: ['what-input.js']
+		}))
+		.pipe(plugin.concat('scripts.js'))
+		.pipe(plugin.uglify())
+		.pipe(plugin.sourcemaps.write('.')) // Creates sourcemap for minified JS
+		.pipe(gulp.dest(ASSETS.scripts));
+});
+
+
+// GULP FUNCTIONS
+// JSHint, concat, and minify JavaScript 
+gulp.task('themeScripts', function() {
+	
 	// Use a custom filter so we only lint custom JS
 	const CUSTOMFILTER = filter(ASSETS.scripts + 'js/**/*.js', {restore: true});
 	
-	return gulp.src(SOURCE.scripts)
+	return gulp.src(SOURCE.themeScripts)
 		.pipe(plugin.plumber(function(error) {
             gutil.log(gutil.colors.red(error.message));
             this.emit('end');
@@ -99,7 +121,7 @@ gulp.task('scripts', function() {
 			.pipe(plugin.jshint(JSHINT_CONFIG))
 			.pipe(plugin.jshint.reporter('jshint-stylish'))
 			.pipe(CUSTOMFILTER.restore)
-		.pipe(plugin.concat('scripts.js'))
+		.pipe(plugin.concat('theme-scripts.js'))
 		.pipe(plugin.uglify())
 		.pipe(plugin.sourcemaps.write('.')) // Creates sourcemap for minified JS
 		.pipe(gulp.dest(ASSETS.scripts));
@@ -153,6 +175,7 @@ gulp.task('browsersync', function() {
     var files = [
     	SOURCE.styles, 
     	SOURCE.scripts,
+    	SOURCE.themeScripts,
     	SOURCE.images,
     	SOURCE.php,
     ];
@@ -163,6 +186,7 @@ gulp.task('browsersync', function() {
     
     gulp.watch(SOURCE.styles, gulp.parallel('styles'));
     gulp.watch(SOURCE.scripts, gulp.parallel('scripts')).on('change', browserSync.reload);
+    gulp.watch(SOURCE.themeScripts, gulp.parallel('themeScripts')).on('change', browserSync.reload);
     gulp.watch(SOURCE.images, gulp.parallel('images'));
 
 });
@@ -176,10 +200,13 @@ gulp.task('watch', function() {
 	// Watch scripts files
 	gulp.watch(SOURCE.scripts, gulp.parallel('scripts'));
 	
+	// Watch scripts files
+	gulp.watch(SOURCE.themeScripts, gulp.parallel('themeScripts'));	
+	
 	// Watch images files
 	gulp.watch(SOURCE.images, gulp.parallel('images'));
   
 }); 
 
 // Run styles, scripts and foundation-js
-gulp.task('default', gulp.parallel('styles', 'scripts', 'images'));
+gulp.task('default', gulp.parallel('styles', 'scripts', 'themeScripts', 'images'));

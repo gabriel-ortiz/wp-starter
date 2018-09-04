@@ -12,7 +12,7 @@ function setup() {
 	// NOTE: Uncomment to activate metabox
 	add_action( 'cmb2_init',  $n( 'artwork_options' ) );
 	
-	//add_action( 'cmb2_init', $n('go_register_conditionals_demo_metabox') );	
+	add_action( 'cmb2_init', $n('go_register_conditionals_demo_metabox') );	
 	
 }
 /**

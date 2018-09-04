@@ -1,6 +1,6 @@
 /******************************************************************
 	
-Stylesheet: Main Stylesheet
+Stylesheet: Foundation Stylesheet
 
 Here's where the magic happens. Here is where you import
 all of your Sass files so they can compile into one
@@ -66,14 +66,4 @@ CSS file.
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 
-// Import your custom styles
 @import "_global.scss";
-@import "base/_all.scss";
-@import "tools/_all.scss";
-@import "blocks/_all.scss";
-@import "components/_all.scss";
-
-
-//import slick stylesheets
-//@import "../vendors/_slick.scss";
-//@import "../vendors/_slick-theme.scss";
