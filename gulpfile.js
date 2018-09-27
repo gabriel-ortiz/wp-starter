@@ -21,6 +21,9 @@ const SOURCE = {
 	scripts: [
 		// Lets grab what-input first
 	    'node_modules/what-input/dist/what-input.js',
+	    
+	    //include JS-Cookie in dependencies
+	    'node_modules/js-cookie/src/js.cookie.js',
 
 		// Foundation core - needed if you want to use any of the components below
 		FOUNDATION + '/dist/js/plugins/foundation.core.js',

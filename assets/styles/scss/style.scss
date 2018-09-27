@@ -67,3 +67,6 @@ CSS file.
 @include foundation-float-classes;
 
 @import "_global.scss";
+
+// Import animate.css min file
+@import "../../node_modules/animate.css/animate.min.css";

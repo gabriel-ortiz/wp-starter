@@ -1,6 +1,6 @@
 <?php 
 
-get_header('home'); ?>
+get_header('front-page'); ?>
 
 <?php
 
@@ -61,7 +61,7 @@ get_header('home'); ?>
 	
 		</div> <!-- end #content -->	
 	  
-	 	 <?php get_footer('home'); ?>
+	 	 <?php get_footer('front-page'); ?>
 
 	  
 	</div>

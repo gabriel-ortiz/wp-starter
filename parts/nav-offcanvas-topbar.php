@@ -20,7 +20,6 @@
 			</div>
 			
 			<div class="top-bar-right">
-				important
 			</div>
 			
 			

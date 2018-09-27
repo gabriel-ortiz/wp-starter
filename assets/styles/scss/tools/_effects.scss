@@ -1,0 +1,27 @@
+/**
+*Effects for producing CSS animations
+*/
+
+//mixin that toggles the adds a toggle effect by applying a transform-active class
+@mixin go-e-transform-toggle( $styles: () ){
+  @content;
+  
+  &.has-transform{
+   transition: $default-transition;
+  }
+  
+  &.has-transform.transform-active{
+    @each $p, $v in $styles {
+      #{$p}: $v;
+    }
+  }
+}
+
+.dot{
+    color: red;
+    background: lightblue;
+    @include go-e-transform-toggle((
+        transform: translate( -10rem, 0 ),
+        color: purple
+    ));
+}
