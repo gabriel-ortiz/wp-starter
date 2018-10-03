@@ -38,74 +38,67 @@
  * 
  * {Description}
  */
-  (( window, $ ) => {
+    (function (window, $ ) {
 
-    var NewClass = ( el ) => {
-      
-      //Place initializer events and event handlers here
-      this.init = () => {
-        //load all the modules 
-        this.DOM        = this.DOMObj();
-        this.modelObj   = this.modelObj();
-        this.CB         = this.CB_Obj();
-        this.setup    = this.setupObj();
-        
-        //element.on('click', this._clickHandler.bind(this));
-        this.DOM.$el.on( 'click', this.CB.sayHello.bind(this) );
-       
-        
-      };
-    
-      //if we need to save any data
-     this.modelObj = () => {
-      
-       return{
-         
-       };
-       
-     };
-     
-      //object with access to cached DOM elements
-     this.DOMObj = () => {
-       //return the DOM elements in an object
-       return {
-         that : this,
-         $el : $(el),
-         test : 'Hello!'
-       };
-     };
-      
-     //these are callback functions for events in the init
-     this.CB_Obj = () => {
-       
-       function sayHello(event){
-         console.log( this.DOM.test );
-         console.log( event );
-         console.log( this );
-       }
-       
-       return{
-          sayHello : sayHello
-       };
-       
-     };      
-     
-      //helpers are useful bits for processing data
-     this.setupObj = () => {
-       
-       return {
-         
-       };
-       
-     };
-     
-      //We have launch!
-      this.init();
-      
-    };
-    
-    $( '.hello' ).each( () => {
-        new NewClass( this );
-    } );
-    
-  })( window, jQuery );
+        var NewClass = function NewClass(el) {
+            //ser the $el variable
+            this.$el = $(el);
+
+            this.init();
+
+
+        };
+
+        //Place initializer events and event handlers here
+        NewClass.prototype.init = function () {
+            //load all the modules
+            this.DOM        = this.DOMObj();
+            this.model      = this.modelObj();
+            this.CB         = this.CB_Obj();
+            this.setup      = this.setUpObj();
+            
+            //events
+            //element.on('click', this._clickHandler.bind(this));
+
+        };
+
+        //if we need to save any data
+        NewClass.prototype.modelObj = function () {
+            return {
+
+            };
+
+        };
+
+        // //object with access to cached DOM elements
+        NewClass.prototype.DOMObj = function () {
+
+            //return the DOM elements in an object
+            return {
+
+            };
+        };
+
+        //these are callback functions for events in the init
+        NewClass.prototype.CB_Obj = function () {
+
+            return {
+
+            };
+
+
+        };
+
+        //helpers are useful bits for processing data
+        NewClass.prototype.setUpObj = function () {
+            return {
+
+            };
+        };
+
+
+
+        $('.class').each(function () {
+            new NewClass(this);
+        });
+    })(this, jQuery);
